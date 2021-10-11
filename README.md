@@ -2,6 +2,7 @@
 jwt-spring-security-demo
 
 来源：https://github.com/szerhusenBC/jwt-spring-security-demo
+
 本demo是在此案例基础上改造，持久层框架改为mybatis
 SQL表结构文件也做了些许更改
 
