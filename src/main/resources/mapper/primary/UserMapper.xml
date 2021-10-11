@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerhusen.dao.primary.UserMapper">
+   <resultMap id="BaseResultMap" type="org.zerhusen.model.primary.User">
+      <!--
+        WARNING - @mbg.generated
+      -->
+      <id column="id" jdbcType="INTEGER" property="id"/>
+      <result column="username" jdbcType="VARCHAR" property="username"/>
+      <result column="password" jdbcType="VARCHAR" property="password"/>
+      <result column="first_name" jdbcType="VARCHAR" property="firstName"/>
+      <result column="last_name" jdbcType="VARCHAR" property="lastName"/>
+      <result column="email" jdbcType="VARCHAR" property="email"/>
+      <result column="enabled" jdbcType="BIT" property="enabled"/>
+      <result column="last_password_reset_date" jdbcType="TIMESTAMP" property="lastPasswordResetDate"/>
+
+      <collection property="authorities" ofType="org.zerhusen.model.primary.Authority" column="authorities">
+         <id column="auth_id" jdbcType="INTEGER" property="id" />
+         <result column="auth_name" jdbcType="VARCHAR" property="name" />
+      </collection>
+   </resultMap>
+
+   <select id="findOneWithAuthoritiesByUsername" resultMap="BaseResultMap">
+      SELECT
+        a.*,
+        c.`id` as auth_id,
+        c.`name` as auth_name
+      FROM
+        `user` a
+        LEFT JOIN `user_authority` b
+          ON a.id = b.user_id
+        LEFT JOIN `authority` c
+          ON b.authority_id = c.id
+      WHERE a.username = #{username};
+   </select>
+
+   <select id="findOneWithAuthoritiesByEmailIgnoreCase" resultMap="BaseResultMap">
+      SELECT
+        a.*,
+        c.`id` as auth_id,
+        c.`name` as auth_name
+      FROM
+        `user` a
+        LEFT JOIN `user_authority` b
+          ON a.id = b.user_id
+        LEFT JOIN `authority` c
+          ON b.authority_id = c.id
+      WHERE a.email = #{email};
+   </select>
+
+   <select id="getUserWithAuthorities" resultMap="BaseResultMap">
+      SELECT
+        a.*,
+        c.`id` as auth_id,
+        c.`name` as auth_name
+      FROM
+        `user` a
+        LEFT JOIN `user_authority` b
+          ON a.id = b.user_id
+        LEFT JOIN `authority` c
+          ON b.authority_id = c.id
+      WHERE a.username = #{username};
+   </select>
+
+</mapper>
