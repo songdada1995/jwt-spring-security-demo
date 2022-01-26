@@ -3,12 +3,12 @@ package org.zerhusen.rest;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.http.MediaType;
-import org.zerhusen.util.AbstractRestControllerTest;
+import org.zerhusen.utils.AbstractRestControllerTest;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.zerhusen.util.LogInUtils.getTokenForLogin;
+import static org.zerhusen.utils.LogInUtils.getTokenForLogin;
 
 public class AdminProtectedRestControllerTest extends AbstractRestControllerTest {
 

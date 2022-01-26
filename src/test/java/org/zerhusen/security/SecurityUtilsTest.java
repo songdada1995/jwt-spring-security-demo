@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.zerhusen.utils.SecurityUtils;
 
 import java.util.Optional;
 

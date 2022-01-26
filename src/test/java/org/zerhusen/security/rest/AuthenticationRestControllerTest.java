@@ -3,7 +3,7 @@ package org.zerhusen.security.rest;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.http.MediaType;
-import org.zerhusen.util.AbstractRestControllerTest;
+import org.zerhusen.utils.AbstractRestControllerTest;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.not;

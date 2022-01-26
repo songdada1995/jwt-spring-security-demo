@@ -152,7 +152,7 @@ $(function () {
 
    $("#adminServiceBtn").click(function () {
       $.ajax({
-         url: "/api/hiddenmessage",
+         url: "/api/hidden_msg",
          type: "GET",
          contentType: "application/json; charset=utf-8",
          dataType: "json",

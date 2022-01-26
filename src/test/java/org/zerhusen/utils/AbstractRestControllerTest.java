@@ -1,4 +1,4 @@
-package org.zerhusen.util;
+package org.zerhusen.utils;
 
 import org.junit.Before;
 import org.junit.runner.RunWith;

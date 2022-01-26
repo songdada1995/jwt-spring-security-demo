@@ -1,4 +1,4 @@
-package org.zerhusen.security;
+package org.zerhusen.security.service;
 
 import org.hibernate.validator.internal.constraintvalidators.hv.EmailValidator;
 import org.slf4j.Logger;
@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.zerhusen.dao.primary.UserMapper;
+import org.zerhusen.exception.UserNotActivatedException;
 import org.zerhusen.model.primary.User;
 
 import java.util.List;

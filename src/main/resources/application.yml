@@ -8,15 +8,6 @@ spring:
     serialization:
       INDENT_OUTPUT: true
 
-#  jpa:
-#    hibernate:
-#      ddl-auto: create-drop
-
-#  h2:
-#    console:
-#      # URL: jdbc:h2:mem:testdb
-#      enabled: true
-
   devtools:
     restart:
       enabled: true

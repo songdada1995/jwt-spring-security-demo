@@ -1,4 +1,4 @@
-package org.zerhusen.config;
+package org.zerhusen.config.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
@@ -12,10 +12,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.filter.CorsFilter;
-import org.zerhusen.security.JwtAccessDeniedHandler;
-import org.zerhusen.security.JwtAuthenticationEntryPoint;
-import org.zerhusen.security.jwt.JWTConfigurer;
-import org.zerhusen.security.jwt.TokenProvider;
+import org.zerhusen.config.security.jwt.JWTConfigurer;
+import org.zerhusen.config.security.jwt.TokenProvider;
 
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
@@ -75,14 +73,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilterBefore(corsFilter, UsernamePasswordAuthenticationFilter.class)
 
                 .exceptionHandling()
+                // 没有登录的处理
                 .authenticationEntryPoint(authenticationErrorHandler)
+                // 没有权限的处理
                 .accessDeniedHandler(jwtAccessDeniedHandler)
-
-                // enable h2-console
-                .and()
-                .headers()
-                .frameOptions()
-                .sameOrigin()
 
                 // create no session
                 .and()
@@ -98,7 +92,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // .antMatchers("/api/account/reset-password/finish").permitAll()
 
                 .antMatchers("/api/person").hasAuthority("ROLE_USER")
-                .antMatchers("/api/hiddenmessage").hasAuthority("ROLE_ADMIN")
+                .antMatchers("/api/hidden_msg").hasAuthority("ROLE_ADMIN")
 
                 .anyRequest().authenticated()
 

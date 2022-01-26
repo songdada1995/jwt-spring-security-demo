@@ -1,4 +1,4 @@
-package org.zerhusen.security.jwt;
+package org.zerhusen.config.security.jwt;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;

@@ -8,12 +8,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.zerhusen.util.AbstractRestControllerTest;
+import org.zerhusen.utils.AbstractRestControllerTest;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.zerhusen.util.LogInUtils.getTokenForLogin;
+import static org.zerhusen.utils.LogInUtils.getTokenForLogin;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

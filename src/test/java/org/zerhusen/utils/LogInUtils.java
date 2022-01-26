@@ -1,4 +1,4 @@
-package org.zerhusen.util;
+package org.zerhusen.utils;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.databind.ObjectMapper;
