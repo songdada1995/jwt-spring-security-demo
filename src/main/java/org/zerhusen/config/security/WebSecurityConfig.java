@@ -12,8 +12,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.filter.CorsFilter;
-import org.zerhusen.config.security.jwt.JWTConfigurer;
-import org.zerhusen.config.security.jwt.TokenProvider;
+import org.zerhusen.security.jwt.JWTConfigurer;
+import org.zerhusen.security.jwt.TokenProvider;
 
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)

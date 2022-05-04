@@ -1,4 +1,4 @@
-package org.zerhusen.config.security.jwt;
+package org.zerhusen.security.jwt;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
